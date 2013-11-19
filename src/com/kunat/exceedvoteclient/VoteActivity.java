@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -30,37 +31,51 @@ public class VoteActivity extends FragmentActivity {
 	 * The {@link ViewPager} that will host the section contents.
 	 */
 	ViewPager mViewPager;
-	NumberObservable numberObs;
+	int total = 10;
+
+	private ArrayList<VotePageFragment> fragments;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Intent intent = getIntent();
 		setContentView(R.layout.activity_vote);
-		numberObs = new NumberObservable();
 		
 		String header = intent.getStringExtra("key");
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the app.
 		//TODO Fragment
-		List<VotePageFragment> fragments = new ArrayList<VotePageFragment>();
-		fragments.add(VotePageFragment.newInstance("Project 1"));
-		fragments.add(VotePageFragment.newInstance("Project 2"));
-		fragments.add(VotePageFragment.newInstance("Project 3"));
-		fragments.add(VotePageFragment.newInstance("Project 4"));
-		fragments.add(VotePageFragment.newInstance("Project 5"));
-		for(Observer i : fragments){
-			numberObs.addObserver(i);
-		}
+		fragments = new ArrayList<VotePageFragment>();
+		fragments.add(VotePageFragment.newInstance("Project 1",this,total));
+		fragments.add(VotePageFragment.newInstance("Project 2",this,total));
+		fragments.add(VotePageFragment.newInstance("Project 3",this,total));
+		fragments.add(VotePageFragment.newInstance("Project 4",this,total));
+		fragments.add(VotePageFragment.newInstance("Project 5",this,total));
+		
 		mSectionsPagerAdapter = new VotePageAdapter(getSupportFragmentManager(), fragments);
 		setTitle(header);
 		// Set up the ViewPager with the sections adapter.
 		mViewPager = (ViewPager) findViewById(R.id.pager);
 		mViewPager.setAdapter(mSectionsPagerAdapter);
+		mViewPager.setOffscreenPageLimit(0);
 
 	}
 	//TODO
-	public void saveVote(){
+	public void valueChange(){
+		int sum = 0;
+		for(VotePageFragment i : fragments){
+			sum += i.getValue();
+		}
+		for(VotePageFragment i : fragments){
+			i.setLeft(total - sum);
+			if(i.getView() != null) {
+				i.updateDisplay(); // do what updates are required
+	         }
+		}
 		
+	}
+	//TODO
+	public void saveVote(){
+		Log.d("VoteActivty","voteSave click");
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -81,16 +96,6 @@ public class VoteActivity extends FragmentActivity {
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
-	}
-
-	class NumberObservable extends Observable{
-		public NumberObservable(){
-			
-		}
-		public void sendData(int leftvalue){
-			setChanged();
-			notifyObservers(leftvalue);
-		}
 	}
 
 }
