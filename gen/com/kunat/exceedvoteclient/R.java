@@ -41,7 +41,7 @@ public final class R {
         public static final int login_form=0x7f080003;
         public static final int login_status=0x7f080001;
         public static final int login_status_message=0x7f080002;
-        public static final int numberPicker1=0x7f08000d;
+        public static final int numberPicker=0x7f08000d;
         public static final int pager=0x7f080008;
         public static final int pager_title_strip=0x7f080009;
         public static final int password=0x7f080005;

@@ -2,6 +2,8 @@ package com.kunat.exceedvoteclient;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 	
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,12 +30,13 @@ public class VoteActivity extends FragmentActivity {
 	 * The {@link ViewPager} that will host the section contents.
 	 */
 	ViewPager mViewPager;
-
+	NumberObservable numberObs;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Intent intent = getIntent();
 		setContentView(R.layout.activity_vote);
+		numberObs = new NumberObservable();
 		
 		String header = intent.getStringExtra("key");
 		// Create the adapter that will return a fragment for each of the three
@@ -45,6 +48,9 @@ public class VoteActivity extends FragmentActivity {
 		fragments.add(VotePageFragment.newInstance("Project 3"));
 		fragments.add(VotePageFragment.newInstance("Project 4"));
 		fragments.add(VotePageFragment.newInstance("Project 5"));
+		for(Observer i : fragments){
+			numberObs.addObserver(i);
+		}
 		mSectionsPagerAdapter = new VotePageAdapter(getSupportFragmentManager(), fragments);
 		setTitle(header);
 		// Set up the ViewPager with the sections adapter.
@@ -77,6 +83,14 @@ public class VoteActivity extends FragmentActivity {
 	    }
 	}
 
-
+	class NumberObservable extends Observable{
+		public NumberObservable(){
+			
+		}
+		public void sendData(int leftvalue){
+			setChanged();
+			notifyObservers(leftvalue);
+		}
+	}
 
 }
