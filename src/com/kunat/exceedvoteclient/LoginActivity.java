@@ -20,7 +20,7 @@ import android.widget.TextView;
  * Activity which displays a login screen to the user, offering registration as
  * well.
  */
-public class LoginActivity extends Activity {
+public class LoginActivity extends Activity implements MyActivity{
 	/**
 	 * A dummy authentication store containing known user names and passwords.
 	 * TODO: remove after connecting to a real authentication system.
@@ -83,12 +83,16 @@ public class LoginActivity extends Activity {
 					@Override
 					public void onClick(View view) {
 						//attemptLogin();
-						Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
-						LoginActivity.this.startActivity(myIntent);
+						new RequestConnection(LoginActivity.this).execute("http://10.0.2.2:9000/",mEmailView.getText().toString(),mPasswordView.getText().toString());
+						
+						
 					}
 				});
 	}
-
+	public void changeActivity(){
+		Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
+		LoginActivity.this.startActivity(myIntent);
+	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);

@@ -1,22 +1,21 @@
 package com.kunat.exceedvoteclient;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.database.DataSetObserver;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
+import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends Activity {
 	ListView listView;
@@ -24,13 +23,14 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.activity_main);
 		setTitle("Choose Criteria");
 		listView = (ListView) findViewById(R.id.listView1);
 		data = new ArrayList<String>();
 		data.add("Item 1");
 		data.add("Item 2");
-		data.add("Item 3");
+        data.add("Item 3");
 		listView.setAdapter(new CriteriaListAdapter(getApplicationContext(),R.layout.criteria_list_row, data));
 		listView.setOnItemClickListener(new OnItemClickListener() {
 
