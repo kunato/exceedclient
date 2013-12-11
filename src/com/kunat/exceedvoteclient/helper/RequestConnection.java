@@ -23,15 +23,28 @@ import com.kunat.exceedvoteclient.model.Contestant;
 import com.kunat.exceedvoteclient.model.ContestantList;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.net.http.AndroidHttpClient;
 import android.os.AsyncTask;
 import android.util.Log;
 
 public class RequestConnection extends AsyncTask<String,Void,String>{
-	private MyActivity rootActivity; 
+	private MyActivity rootActivity;
+	private ProgressDialog pd; 
 	public RequestConnection(MyActivity rootActivity){
 		this.rootActivity = rootActivity;
 		
+	}
+	protected void onPreExecute() {
+        super.onPreExecute();
+        pd = new ProgressDialog((Activity)rootActivity);
+        pd.setIndeterminate(true);
+        pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        pd.setMessage("Working");
+        pd.setCancelable(false);
+        pd.setCanceledOnTouchOutside(false);
+        pd.show();
+
 	}
 	@Override
 	protected String doInBackground(String... params) {
@@ -58,13 +71,16 @@ public class RequestConnection extends AsyncTask<String,Void,String>{
 	            HttpGet job = new HttpGet(url);
 	            HttpResponse response = httpClient.execute(host,job,credContext);
 	            StatusLine status = response.getStatusLine();
+	            if(status.getStatusCode() != 200){
+	            	return "error";
+	            }
 	            HttpEntity entity = response.getEntity();
 	            String s_response = EntityUtils.toString(entity);
 	            httpClient.close();
 	            return s_response;
 	        }
 	        catch(Exception e){
-	            return e.getMessage();
+	            return "error";
 	        }
 
 	    }
@@ -72,17 +88,8 @@ public class RequestConnection extends AsyncTask<String,Void,String>{
 	}
 	
 	protected void onPostExecute(String result) {
-		Serializer serializer = new Persister();
-        ContestantList c;
-		try {
-			c = serializer.read(ContestantList.class, result);
-		
-        for(Contestant i : c.getContestantList()){
-        	Log.d("TAG",i.id+"");
-        }
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(pd!=null){
+			pd.dismiss();
 		}
 		rootActivity.onCallBack(result);
     }

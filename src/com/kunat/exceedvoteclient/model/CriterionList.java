@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
-@Root(name="contestants")
+@Root(name="criteria")
 public class CriterionList {
-	@ElementList(name="contestant",inline=true)
+	@ElementList(name="criterion",inline=true)
 	private List<Criterion> c_list;
 
 	public List<Criterion> getCriterions() {

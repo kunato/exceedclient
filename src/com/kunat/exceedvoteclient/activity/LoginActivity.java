@@ -1,24 +1,15 @@
 package com.kunat.exceedvoteclient.activity;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
-import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
+
 import com.kunat.exceedvoteclient.R;
 import com.kunat.exceedvoteclient.application.ExceedVoteApp;
-import com.kunat.exceedvoteclient.helper.LoginConnection;
-import com.kunat.exceedvoteclient.helper.RequestConnection;
 
 /**
  * Activity which displays a login screen to the user, offering registration as
@@ -48,6 +39,7 @@ public class LoginActivity extends Activity{
 	// UI references.
 	private EditText mEmailView;
 	private EditText mPasswordView;
+	private EditText mHostView;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -58,24 +50,30 @@ public class LoginActivity extends Activity{
 		mEmail = getIntent().getStringExtra(EXTRA_EMAIL);
 		mEmailView = (EditText) findViewById(R.id.email);
 		mEmailView.setText(mEmail);
-
+		mHostView = (EditText) findViewById(R.id.host);
 		mPasswordView = (EditText) findViewById(R.id.password);
-		findViewById(R.id.login_form);
-		findViewById(R.id.login_status);
 
 		findViewById(R.id.sign_in_button).setOnClickListener(
 				new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
 						ExceedVoteApp app = (ExceedVoteApp) getApplication();
+						if(!mHostView.getText().toString().equals("")){
+							app.hostSet(mHostView.getText().toString());
+						}
 						app.login(mEmailView.getText().toString(),mPasswordView.getText().toString(),LoginActivity.this);
 					}
 				});
 	}
 	
 	public void changeActivity(String result){
-		Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
-		LoginActivity.this.startActivity(myIntent);
+		if(!result.equals("error")){
+			Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
+			LoginActivity.this.startActivity(myIntent);
+		}
+		else{
+			Toast.makeText(getApplicationContext(), "Connection Error check your id and your connection", Toast.LENGTH_LONG).show();
+		}
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

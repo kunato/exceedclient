@@ -23,15 +23,28 @@ import com.kunat.exceedvoteclient.activity.MyActivity;
 import com.kunat.exceedvoteclient.model.Contestant;
 import com.kunat.exceedvoteclient.model.ContestantList;
 
+import android.app.ProgressDialog;
 import android.net.http.AndroidHttpClient;
 import android.os.AsyncTask;
 import android.util.Log;
 
 public class LoginConnection extends AsyncTask<String,Void,String>{
-	private LoginActivity rootActivity; 
+	private LoginActivity rootActivity;
+	private ProgressDialog pd; 
 	public LoginConnection(LoginActivity rootActivity){
 		this.rootActivity = rootActivity;
 		
+	}
+	protected void onPreExecute() {
+        super.onPreExecute();
+        pd = new ProgressDialog(rootActivity);
+        pd.setIndeterminate(true);
+        pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        pd.setMessage("Working");
+        pd.setCancelable(false);
+        pd.setCanceledOnTouchOutside(false);
+        pd.show();
+
 	}
 	@Override
 	protected String doInBackground(String... params) {
@@ -58,13 +71,18 @@ public class LoginConnection extends AsyncTask<String,Void,String>{
 	            HttpGet job = new HttpGet(url);
 	            HttpResponse response = httpClient.execute(host,job,credContext);
 	            StatusLine status = response.getStatusLine();
+	            Log.d("TAG", status.getStatusCode()+"");
+	            if(status.getStatusCode() != 200){
+	            	return "error";
+	            }
 	            HttpEntity entity = response.getEntity();
 	            String s_response = EntityUtils.toString(entity);
 	            httpClient.close();
 	            return s_response;
 	        }
 	        catch(Exception e){
-	            return e.getMessage();
+	        	Log.d("TAG",e.getMessage());
+	            return "error";
 	        }
 
 	    }
@@ -72,17 +90,8 @@ public class LoginConnection extends AsyncTask<String,Void,String>{
 	}
 	
 	protected void onPostExecute(String result) {
-		Serializer serializer = new Persister();
-        ContestantList c;
-		try {
-			c = serializer.read(ContestantList.class, result);
-		
-        for(Contestant i : c.getContestantList()){
-        Log.d("TAG",i.id+"");
-        }
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(pd!=null){
+			pd.dismiss();
 		}
 		rootActivity.changeActivity(result);
     }

@@ -14,13 +14,19 @@ import android.widget.ListView;
 import com.kunat.exceedvoteclient.R;
 import com.kunat.exceedvoteclient.adapter.CriteriaListAdapter;
 import com.kunat.exceedvoteclient.application.ExceedVoteApp;
+import com.kunat.exceedvoteclient.model.ContestantList;
+import com.kunat.exceedvoteclient.model.Criterion;
+import com.kunat.exceedvoteclient.model.CriterionList;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.simpleframework.xml.Serializer;
+import org.simpleframework.xml.core.Persister;
+
 public class MainActivity extends Activity implements MyActivity{
 	ListView listView;
-	List<String> data;
+	List<Criterion> data;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -32,19 +38,31 @@ public class MainActivity extends Activity implements MyActivity{
 	}
 	@Override
 	public void onCallBack(String result) {
+		Log.d("TAG", result);
+		Serializer serializer = new Persister();
+        CriterionList c = null;
+		try {
+			c = serializer.read(CriterionList.class, result);
+		
+        
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		listView = (ListView) findViewById(R.id.listView1);
 		//TODO convert result to Criterion
-		data = new ArrayList<String>();
-		data.add("Item 1");
-		data.add("Item 2");
-        data.add("Item 3");
+		data = new ArrayList<Criterion>();
+		for(Criterion i : c.getCriterions()){
+        	data.add(i);
+        }
 		listView.setAdapter(new CriteriaListAdapter(getApplicationContext(),R.layout.criteria_list_row, data));
 		listView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				Intent myIntent = new Intent(MainActivity.this, VoteActivity.class);
-				myIntent.putExtra("key", data.get(position)); 
+				myIntent.putExtra("name", data.get(position).name); 
+				//myIntent.putExtra("type", data.get(position).id);
 				MainActivity.this.startActivity(myIntent);
 				
 			}

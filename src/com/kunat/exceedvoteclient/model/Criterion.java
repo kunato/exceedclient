@@ -7,10 +7,10 @@ import org.simpleframework.xml.Root;
 public class Criterion{
 	@Element(name="id")
     public Long id;
-	@Element(name="question")
+	@Element(name="name")
     public String name;
-    @Element(name="type")
-    public int type;
+    //@Element(name="type")
+    //public int type;
     
    
     
@@ -38,13 +38,7 @@ public class Criterion{
             this.name = name;
     }
     
-    public int getType() {
-            return type;
-    }
-
-    public void setType(int type) {
-            this.type = type;
-    }
+   
 
     public String toString() {
             return "";

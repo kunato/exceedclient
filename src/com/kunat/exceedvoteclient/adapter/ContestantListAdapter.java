@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.kunat.exceedvoteclient.R;
 import com.kunat.exceedvoteclient.R.id;
+import com.kunat.exceedvoteclient.model.Contestant;
 import com.kunat.exceedvoteclient.model.Criterion;
 
 import android.content.Context;
@@ -14,11 +15,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class CriteriaListAdapter extends ArrayAdapter<Criterion> {
+public class ContestantListAdapter extends ArrayAdapter<Contestant> {
 	private Context context;
 	private int textViewResourceId;
-	private List<Criterion> data;
-	public CriteriaListAdapter(Context context, int textViewResourceId,List<Criterion> c) {
+	private List<Contestant> data;
+	public ContestantListAdapter(Context context, int textViewResourceId,List<Contestant> c) {
 		super(context, textViewResourceId, c);
 
 		this.context = context;
@@ -34,7 +35,7 @@ public class CriteriaListAdapter extends ArrayAdapter<Criterion> {
         //ImageView imageView = (ImageView) rowView.findViewById(R.id.imageView);
         TextView textView = (TextView) rowView.findViewById(R.id.listTextView);
 
-        Criterion obj = data.get(position);
+        Contestant obj = data.get(position);
         //TODO
         //no img yet
         //String imageFile = null;

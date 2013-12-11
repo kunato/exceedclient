@@ -5,12 +5,20 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
+import org.simpleframework.xml.Serializer;
+import org.simpleframework.xml.core.Persister;
+
 import com.kunat.exceedvoteclient.R;
 import com.kunat.exceedvoteclient.R.id;
 import com.kunat.exceedvoteclient.R.layout;
 import com.kunat.exceedvoteclient.R.menu;
 import com.kunat.exceedvoteclient.adapter.VotePageAdapter;
+import com.kunat.exceedvoteclient.application.ExceedVoteApp;
 import com.kunat.exceedvoteclient.fragment.VotePageFragment;
+import com.kunat.exceedvoteclient.model.Contestant;
+import com.kunat.exceedvoteclient.model.ContestantList;
+import com.kunat.exceedvoteclient.model.Criterion;
+import com.kunat.exceedvoteclient.model.CriterionList;
 	
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,6 +29,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ListView;
 
 public class VoteActivity extends FragmentActivity implements MyActivity{
 
@@ -41,6 +50,8 @@ public class VoteActivity extends FragmentActivity implements MyActivity{
 	int total = 10;
 
 	private ArrayList<VotePageFragment> fragments;
+
+	private ArrayList<Contestant> data;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -49,6 +60,8 @@ public class VoteActivity extends FragmentActivity implements MyActivity{
 		
 		String header = intent.getStringExtra("key");
 		setTitle(header);
+		ExceedVoteApp app = (ExceedVoteApp) getApplication();
+		app.request("contestant", this);
 		
 
 	}
@@ -92,13 +105,25 @@ public class VoteActivity extends FragmentActivity implements MyActivity{
 	}
 	@Override
 	public void onCallBack(String result) {
-		//TODO convert result to contestants
+		Log.d("TAG", result);
+		Serializer serializer = new Persister();
+        ContestantList c = null;
+		try {
+			c = serializer.read(ContestantList.class, result);
+		
+        
+		} catch (Exception e) {
+			Log.d("ERROR",e.getMessage());
+			e.printStackTrace();
+		}
 		fragments = new ArrayList<VotePageFragment>();
-		fragments.add(VotePageFragment.newInstance("Project 1",this,total));
-		fragments.add(VotePageFragment.newInstance("Project 2",this,total));
-		fragments.add(VotePageFragment.newInstance("Project 3",this,total));
-		fragments.add(VotePageFragment.newInstance("Project 4",this,total));
-		fragments.add(VotePageFragment.newInstance("Project 5",this,total));
+		data = new ArrayList<Contestant>();
+		for(Contestant i : c.getContestantList()){
+        	data.add(i);
+        	fragments.add(VotePageFragment.newInstance(this,total,i.name,i.description));
+    	}
+		
+		
 		
 		mSectionsPagerAdapter = new VotePageAdapter(getSupportFragmentManager(), fragments);
 		

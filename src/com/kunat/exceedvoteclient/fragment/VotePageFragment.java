@@ -11,17 +11,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.NumberPicker;
+import android.widget.TextView;
 import android.widget.NumberPicker.OnValueChangeListener;
 
 public class VotePageFragment extends Fragment{
 
 	 public static final String EXTRA_MESSAGE = "EXTRA_MESSAGE";
+	 public static final String NAME ="NAME";
+	 public static final String DESCRIPTION = "DES";
 	 private VoteActivity voteActivity;
 	 private int value;
 	 private NumberPicker np;
 	 private int left;
+	 private TextView title;
+	 private TextView des;
 	 
-	 public static final VotePageFragment newInstance(String message,VoteActivity voteActivity,int total)
+	 public static final VotePageFragment newInstance(VoteActivity voteActivity,int total,String name,String description)
 
 	 {
 	
@@ -30,8 +35,8 @@ public class VotePageFragment extends Fragment{
 	   f.left = total;
 	   Bundle bdl = new Bundle(1);
 
-	   bdl.putString(EXTRA_MESSAGE, message);
-
+	   bdl.putString(NAME, name);
+	   bdl.putString(DESCRIPTION, description);
 	   f.setArguments(bdl);
 	   return f;
 
@@ -52,10 +57,13 @@ public class VotePageFragment extends Fragment{
 	 public View onCreateView(LayoutInflater inflater, ViewGroup container,
 
 	   Bundle savedInstanceState) {
-
-	   String message = getArguments().getString(EXTRA_MESSAGE);
-
+	   String name = getArguments().getString(NAME);
+	   String description = getArguments().getString(DESCRIPTION);
 	   View v = inflater.inflate(R.layout.fragment_vote, container, false);
+	   title = (TextView) v.findViewById(R.id.titleText);
+	   des = (TextView) v.findViewById(R.id.desText);
+	   title.setText(name);
+	   des.setText(description);
 	   np = (NumberPicker) v.findViewById(R.id.numberPicker);
 	   np.setMaxValue(value+left);
 	   np.setValue(value);
