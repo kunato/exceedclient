@@ -2,27 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a2f23e8-5a5d-4224-9621-021d5f45237f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/spring-android-auth-1.0.0.M4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/spring-android-core-1.0.0.M4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/spring-android-rest-template-1.0.0.M4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_support_v4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exceedclient.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/spring_android_auth_1_0_0_M4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/BuildConfig.class" afterPath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/BuildConfig.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/kunat/exceedvoteclient/model/User.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/CriteriaListAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/HistoryActivity$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/HistoryActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/HistoryListAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/LoginActivity$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/LoginActivity$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/LoginActivity$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/LoginActivity$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/LoginActivity$UserLoginTask.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/LoginActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/MainActivity$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/MainActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/MyActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/RequestConnection.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/VoteActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/VotePageAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/VotePageFragment$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/VotePageFragment.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/kunat/exceedvoteclient/CriteriaListAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/kunat/exceedvoteclient/HistoryActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/kunat/exceedvoteclient/HistoryListAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/kunat/exceedvoteclient/LoginActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/kunat/exceedvoteclient/MainActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/kunat/exceedvoteclient/MyActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/kunat/exceedvoteclient/RequestConnection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/kunat/exceedvoteclient/VoteActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/kunat/exceedvoteclient/VotePageAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/kunat/exceedvoteclient/VotePageFragment.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/ExceedVoteClient.apk" afterPath="$PROJECT_DIR$/bin/ExceedVoteClient.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/MainActivity$1.class" afterPath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/MainActivity$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/MainActivity.class" afterPath="$PROJECT_DIR$/bin/classes/com/kunat/exceedvoteclient/MainActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes.dex" afterPath="$PROJECT_DIR$/bin/classes.dex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/resources.ap_" afterPath="$PROJECT_DIR$/bin/resources.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.classpath" afterPath="$PROJECT_DIR$/.classpath" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/kunat/exceedvoteclient/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/com/kunat/exceedvoteclient/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kunat/exceedvoteclient/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/kunat/exceedvoteclient/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/AndroidManifest.xml" afterPath="$PROJECT_DIR$/bin/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/kunat/exceedvoteclient/R.java" afterPath="$PROJECT_DIR$/gen/com/kunat/exceedvoteclient/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings_activity_login.xml" afterPath="$PROJECT_DIR$/res/values/strings_activity_login.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="exceedclient.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="0a2f23e8-5a5d-4224-9621-021d5f45237f" time="1385367776152" ignored="false" />
+    <file path="/Dummy.txt" changelist="0a2f23e8-5a5d-4224-9621-021d5f45237f" time="1386176527080" ignored="false" />
     <file path="/MainActivity.java" changelist="0a2f23e8-5a5d-4224-9621-021d5f45237f" time="1385367254227" ignored="false" />
+    <file path="/fragment.java" changelist="0a2f23e8-5a5d-4224-9621-021d5f45237f" time="1386078138671" ignored="false" />
+    <file path="/User.java" changelist="0a2f23e8-5a5d-4224-9621-021d5f45237f" time="1386078212078" ignored="false" />
+    <file path="/ExceedVoteApp.java" changelist="0a2f23e8-5a5d-4224-9621-021d5f45237f" time="1386078415283" ignored="false" />
+    <file path="/ContestantList.java" changelist="0a2f23e8-5a5d-4224-9621-021d5f45237f" time="1386078510820" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,10 +109,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/MainActivity.java">
+      <file leaf-file-name="ExceedVoteApp.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/application/ExceedVoteApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="24" selection-start="894" selection-end="894" vertical-scroll-proportion="0.023364486">
+            <state line="21" column="5" selection-start="847" selection-end="847" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/activity/LoginActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="97" column="17" selection-start="3171" selection-end="3171" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Contestant.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/model/Contestant.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="13" selection-start="163" selection-end="163" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/model/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="33" selection-start="500" selection-end="500" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ContestantList.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/model/ContestantList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="0" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0931677">
               <folding />
             </state>
           </provider>
@@ -111,6 +173,10 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/com/kunat/exceedvoteclient/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/kunat/exceedvoteclient/model/User.java" />
+        <option value="$PROJECT_DIR$/src/com/kunat/exceedvoteclient/activity/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/kunat/exceedvoteclient/application/ExceedVoteApp.java" />
+        <option value="$PROJECT_DIR$/src/com/kunat/exceedvoteclient/model/ContestantList.java" />
       </list>
     </option>
   </component>
@@ -201,6 +267,50 @@
               <option name="myItemId" value="exceedvoteclient" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exceedclient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exceedclient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exceedvoteclient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exceedclient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exceedclient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exceedvoteclient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -235,13 +345,16 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/libs" />
     </key>
@@ -279,19 +392,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -318,6 +418,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -409,7 +522,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="22" width="1420" height="790" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -504,16 +617,107 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/application/ExceedVoteApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="21" column="5" selection-start="847" selection-end="847" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/activity/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="24" selection-start="894" selection-end="894" vertical-scroll-proportion="0.023364486">
+        <state line="97" column="17" selection-start="3171" selection-end="3171" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/model/Contestant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="163" selection-end="163" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="33" selection-start="500" selection-end="500" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/model/ContestantList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/application/ExceedVoteApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="5" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/activity/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="17" selection-start="3077" selection-end="3077" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/model/Contestant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="163" selection-end="163" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="33" selection-start="378" selection-end="378" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/model/ContestantList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="33" selection-start="500" selection-end="500" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/activity/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="97" column="17" selection-start="3171" selection-end="3171" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/application/ExceedVoteApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="5" selection-start="847" selection-end="847" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/model/Contestant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="163" selection-end="163" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kunat/exceedvoteclient/model/ContestantList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0931677">
           <folding />
         </state>
       </provider>
