@@ -12,16 +12,10 @@ import com.kunat.exceedvoteclient.R;
 import com.kunat.exceedvoteclient.application.ExceedVoteApp;
 
 /**
- * Activity which displays a login screen to the user, offering registration as
- * well.
+ * LoginActivity is a activity that use to authenticate user.
+ * @author Kunat Pipatanakul
  */
 public class LoginActivity extends Activity{
-	/**
-	 * A dummy authentication store containing known user names and passwords.
-	 * TODO: remove after connecting to a real authentication system.
-	 */
-	private static final String[] DUMMY_CREDENTIALS = new String[] {
-			"foo@example.com:hello", "bar@example.com:world" };
 
 	/**
 	 * The default email to populate the email field with.

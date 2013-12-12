@@ -3,7 +3,6 @@ package com.kunat.exceedvoteclient.adapter;
 import java.util.List;
 
 import com.kunat.exceedvoteclient.R;
-import com.kunat.exceedvoteclient.R.id;
 import com.kunat.exceedvoteclient.model.Criterion;
 
 import android.content.Context;
@@ -11,9 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
-
+/**
+ * ArrayAdapter implementation for CriterionList
+ * @author Kunat Pipatanakul
+ *
+ */
 public class CriteriaListAdapter extends ArrayAdapter<Criterion> {
 	private Context context;
 	private int textViewResourceId;

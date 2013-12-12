@@ -1,12 +1,15 @@
 package com.kunat.exceedvoteclient.model;
 
-import java.util.List;
 
 import org.simpleframework.xml.Element;
-import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
 @Root(name="vote")
+/**
+ * VoteHistory is xml object using in history activity.
+ * @author Kunat Pipatanakul
+ *
+ */
 public class VoteHistory {
 	@Element(name="criterion")
 	public VoteCriterionHistory voteCriterionHistory;

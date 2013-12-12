@@ -14,7 +14,6 @@ import android.widget.ListView;
 import com.kunat.exceedvoteclient.R;
 import com.kunat.exceedvoteclient.adapter.CriteriaListAdapter;
 import com.kunat.exceedvoteclient.application.ExceedVoteApp;
-import com.kunat.exceedvoteclient.model.ContestantList;
 import com.kunat.exceedvoteclient.model.Criterion;
 import com.kunat.exceedvoteclient.model.CriterionList;
 
@@ -23,7 +22,11 @@ import java.util.List;
 
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
-
+/**
+ * MainActivity is a activity that user choose the criteria to vote on.
+ * @author Kunat Pipatanakul
+ *
+ */
 public class MainActivity extends Activity implements MyActivity{
 	ListView listView;
 	List<Criterion> data;

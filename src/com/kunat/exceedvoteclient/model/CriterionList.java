@@ -5,6 +5,11 @@ import java.util.List;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 @Root(name="criteria")
+/**
+ * List of criterion
+ * @author Kunat Pipatanakul
+ * 
+ */
 public class CriterionList {
 	@ElementList(name="criterion",inline=true)
 	private List<Criterion> c_list;

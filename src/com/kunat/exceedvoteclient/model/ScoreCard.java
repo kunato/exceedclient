@@ -4,6 +4,11 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
 @Root(name="contestant")
+/**
+ * ScoreCard is a xml object using in vote process.
+ * @author Kunat Pipatanakul
+ * 
+ */
 public class ScoreCard {
 	@Element(name="id")
 	public int id;

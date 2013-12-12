@@ -7,6 +7,11 @@ import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
 @Root(name="contestants")
+/**
+ * Ballot model for xml using in vote process.
+ * @author Kunat Pipatanakul
+ *
+ */
 public class Ballot{
 	@ElementList(name="contestant",inline=true)
 	List<ScoreCard> scoreCards = new ArrayList<ScoreCard>();

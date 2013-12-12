@@ -15,19 +15,17 @@ import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
-import org.simpleframework.xml.Serializer;
-import org.simpleframework.xml.core.Persister;
-
 import com.kunat.exceedvoteclient.activity.MyActivity;
-import com.kunat.exceedvoteclient.model.Contestant;
-import com.kunat.exceedvoteclient.model.ContestantList;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.net.http.AndroidHttpClient;
 import android.os.AsyncTask;
 import android.util.Log;
-
+/**
+ * Background task for Request data like criterion, contestant
+ * @author Kunat Pipatanakul
+ *
+ */
 public class RequestConnection extends AsyncTask<String,Void,String>{
 	private MyActivity rootActivity;
 	private ProgressDialog pd; 
@@ -72,6 +70,7 @@ public class RequestConnection extends AsyncTask<String,Void,String>{
 	            HttpResponse response = httpClient.execute(host,job,credContext);
 	            StatusLine status = response.getStatusLine();
 	            if(status.getStatusCode() != 200){
+	            	Log.d("ERROR",EntityUtils.toString(response.getEntity()));
 	            	return "error";
 	            }
 	            HttpEntity entity = response.getEntity();

@@ -7,32 +7,21 @@ import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
 
 import com.kunat.exceedvoteclient.R;
-import com.kunat.exceedvoteclient.R.id;
-import com.kunat.exceedvoteclient.R.layout;
-import com.kunat.exceedvoteclient.R.menu;
-import com.kunat.exceedvoteclient.adapter.CriteriaListAdapter;
 import com.kunat.exceedvoteclient.adapter.HistoryListAdapter;
 import com.kunat.exceedvoteclient.application.ExceedVoteApp;
-import com.kunat.exceedvoteclient.model.ContestantList;
-import com.kunat.exceedvoteclient.model.Criterion;
-import com.kunat.exceedvoteclient.model.CriterionList;
 import com.kunat.exceedvoteclient.model.MyVote;
 import com.kunat.exceedvoteclient.model.VoteHistory;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.Intent;
-import android.database.DataSetObserver;
 import android.util.Log;
 import android.view.Menu;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-
+/**
+ * HistoryActivity is a activity of history page.
+ * @author Kunat Pipatanakul
+ *
+ */
 public class HistoryActivity extends Activity implements MyActivity{
 	ListView listView;
 	List<VoteHistory> data;
@@ -70,17 +59,18 @@ public class HistoryActivity extends Activity implements MyActivity{
 			Log.d("TEST",v.voteCriterionHistory.id+"");
 		}
 		listView.setAdapter(new HistoryListAdapter(getApplicationContext(),R.layout.criteria_list_row, data));
+		/**
 		listView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				Intent myIntent = new Intent(HistoryActivity.this, VoteActivity.class);
 				myIntent.putExtra("name", data.get(position).voteCriterionHistory.id); 
-				//myIntent.putExtra("score", data.get(position).value);
 				HistoryActivity.this.startActivity(myIntent);
 				
 			}
 		});
+		*/
 		
 	}
 

@@ -4,6 +4,11 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
 @Root(name="vote")
+/**
+ * Vote using in vote process
+ * @author Kunat Pipatanakul
+ *
+ */
 public class Vote{
 		@Element(name="contestants")
         public Ballot ballot;

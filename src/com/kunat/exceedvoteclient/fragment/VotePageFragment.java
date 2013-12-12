@@ -1,8 +1,6 @@
 package com.kunat.exceedvoteclient.fragment;
 
 import com.kunat.exceedvoteclient.R;
-import com.kunat.exceedvoteclient.R.id;
-import com.kunat.exceedvoteclient.R.layout;
 import com.kunat.exceedvoteclient.activity.VoteActivity;
 
 import android.os.Bundle;
@@ -14,7 +12,11 @@ import android.view.ViewGroup;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.NumberPicker.OnValueChangeListener;
-
+/**
+ * Fragment for VoteActivity
+ * @author Kunat Pipatanakul
+ *
+ */
 public class VotePageFragment extends Fragment{
 
 	 public static final String EXTRA_MESSAGE = "EXTRA_MESSAGE";
@@ -37,7 +39,7 @@ public class VotePageFragment extends Fragment{
 	   f.voteActivity = voteActivity;
 	   f.left = total;
 	   Bundle bdl = new Bundle(1);
-	   bdl.putInt(ID, id);
+	   f.pageId = id;
 	   bdl.putString(NAME, name);
 	   bdl.putString(DESCRIPTION, description);
 	   f.setArguments(bdl);
@@ -62,7 +64,6 @@ public class VotePageFragment extends Fragment{
 	   Bundle savedInstanceState) {
 	   String name = getArguments().getString(NAME);
 	   String description = getArguments().getString(DESCRIPTION);
-	   pageId = getArguments().getInt(ID);
 	   Log.d("Fragment",pageId+"");
 	   View v = inflater.inflate(R.layout.fragment_vote, container, false);
 	   title = (TextView) v.findViewById(R.id.titleText);

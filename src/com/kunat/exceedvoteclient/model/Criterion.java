@@ -4,6 +4,11 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
 @Root(name="criterion")
+/**
+ * Criterion using in MainActivity.
+ * @author Kunat Pipatanakul
+ *
+ */
 public class Criterion{
 	@Element(name="id")
     public int id;

@@ -7,7 +7,11 @@ import com.kunat.exceedvoteclient.fragment.VotePageFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-
+/**
+ * PageAdapter for VoteActivity
+ * @author Kunat Pipatanakul
+ *
+ */
 public class VotePageAdapter extends FragmentPagerAdapter {
 
   private List<VotePageFragment> fragments;

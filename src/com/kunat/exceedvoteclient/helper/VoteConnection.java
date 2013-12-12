@@ -9,7 +9,6 @@ import org.apache.http.StatusLine;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.CredentialsProvider;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.protocol.ClientContext;
 import org.apache.http.entity.StringEntity;
@@ -18,7 +17,6 @@ import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
 
-import com.kunat.exceedvoteclient.activity.MyActivity;
 import com.kunat.exceedvoteclient.activity.VoteActivity;
 
 import android.app.Activity;
@@ -26,7 +24,11 @@ import android.app.ProgressDialog;
 import android.net.http.AndroidHttpClient;
 import android.os.AsyncTask;
 import android.util.Log;
-
+/**
+ * Background task for voting.
+ * @author Kunat Pipatanakul
+ *
+ */
 public class VoteConnection extends AsyncTask<String,Void,String>{
 	private VoteActivity rootActivity;
 	private ProgressDialog pd; 
