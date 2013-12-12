@@ -6,11 +6,11 @@ import org.simpleframework.xml.Root;
 @Root(name="criterion")
 public class Criterion{
 	@Element(name="id")
-    public Long id;
+    public int id;
 	@Element(name="name")
     public String name;
-    //@Element(name="type")
-    //public int type;
+    @Element(name="type")
+    public int type;
     
    
     
@@ -22,11 +22,11 @@ public class Criterion{
             this.name = name;
     }
     
-    public Long getId() {
+    public int getId() {
             return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
             this.id = id;
     }
 

@@ -62,7 +62,8 @@ public class MainActivity extends Activity implements MyActivity{
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				Intent myIntent = new Intent(MainActivity.this, VoteActivity.class);
 				myIntent.putExtra("name", data.get(position).name); 
-				//myIntent.putExtra("type", data.get(position).id);
+				myIntent.putExtra("id", data.get(position).id);
+				myIntent.putExtra("type", data.get(position).type);
 				MainActivity.this.startActivity(myIntent);
 				
 			}

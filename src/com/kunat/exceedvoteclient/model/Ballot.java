@@ -1,49 +1,22 @@
 package com.kunat.exceedvoteclient.model;
 
+import java.util.ArrayList;
+import java.util.List;
 
+import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Root;
+
+@Root(name="contestants")
 public class Ballot{
-
-        public Long id;
-        public Contestant contestant;
-        
-        public int score;
-        
-      
-        public Ballot() {
-                
-        }
-        
-        public Ballot(Contestant contestant, int score) {
-                this.contestant = contestant;
-                this.score = score;
-        }
-        
-        public Contestant getContestant() {
-                return contestant;
-        }
-
-        public Long getId() {
-                return id;
-        }
-
-        public void setId(Long id) {
-                this.id = id;
-        }
-
-        public void setContestant(Contestant contestant) {
-                this.contestant = contestant;
-        }
-
-        public int getScore() {
-                return score;
-        }
-
-        public void setScore(int score) {
-                this.score = score;
-        }
-        
-        public String toString() {
-                return "";
-        }
-
+	@ElementList(name="contestant",inline=true)
+	List<ScoreCard> scoreCards = new ArrayList<ScoreCard>();
+	public Ballot(){
+		
+	}
+	public void addScoreCard(ScoreCard sc){
+		scoreCards.add(sc);
+	}
+	public List<ScoreCard> getScoreCards(){
+		return scoreCards;
+	}
 }

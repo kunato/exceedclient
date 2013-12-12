@@ -4,12 +4,10 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
 @Root(name="contestant")
-public class Contestant {
+public class VoteContestantHistory {
 	@Element(name="id")
 	public int id;
-	@Element(name="name")
-	public String name;
-	@Element(name="description")
-	public String description;
+	@Element(name="score")
+	public int score;
 	
 }

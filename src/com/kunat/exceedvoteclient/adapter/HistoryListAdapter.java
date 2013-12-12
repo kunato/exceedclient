@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.kunat.exceedvoteclient.R;
 import com.kunat.exceedvoteclient.R.id;
+import com.kunat.exceedvoteclient.model.VoteHistory;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,12 +14,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class HistoryListAdapter extends ArrayAdapter<String> {
+public class HistoryListAdapter extends ArrayAdapter<VoteHistory> {
 	private Context context;
 	private int textViewResourceId;
-	private List<String> data;
+	private List<VoteHistory> data;
 	public HistoryListAdapter(Context context, int textViewResourceId,
-			List<String> objects) {
+			List<VoteHistory> objects) {
 		super(context, textViewResourceId, objects);
 
 		this.context = context;
@@ -34,7 +35,7 @@ public class HistoryListAdapter extends ArrayAdapter<String> {
         //ImageView imageView = (ImageView) rowView.findViewById(R.id.imageView);
         TextView textView = (TextView) rowView.findViewById(R.id.listTextView);
 
-        String obj = data.get(position);
+        String obj = "Vote,"+data.get(position).voteContestantHistory.id+"on "+data.get(position).voteCriterionHistory.id+"for "+data.get(position).voteContestantHistory.score;
         //TODO
         //no img yet
         //String imageFile = null;

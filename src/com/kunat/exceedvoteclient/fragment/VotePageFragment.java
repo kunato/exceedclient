@@ -7,6 +7,7 @@ import com.kunat.exceedvoteclient.activity.VoteActivity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,14 +20,16 @@ public class VotePageFragment extends Fragment{
 	 public static final String EXTRA_MESSAGE = "EXTRA_MESSAGE";
 	 public static final String NAME ="NAME";
 	 public static final String DESCRIPTION = "DES";
+	 public static final String ID = "ID";
 	 private VoteActivity voteActivity;
 	 private int value;
 	 private NumberPicker np;
 	 private int left;
 	 private TextView title;
 	 private TextView des;
+	 private int pageId;
 	 
-	 public static final VotePageFragment newInstance(VoteActivity voteActivity,int total,String name,String description)
+	 public static final VotePageFragment newInstance(VoteActivity voteActivity,int total,String name,String description,int id)
 
 	 {
 	
@@ -34,7 +37,7 @@ public class VotePageFragment extends Fragment{
 	   f.voteActivity = voteActivity;
 	   f.left = total;
 	   Bundle bdl = new Bundle(1);
-
+	   bdl.putInt(ID, id);
 	   bdl.putString(NAME, name);
 	   bdl.putString(DESCRIPTION, description);
 	   f.setArguments(bdl);
@@ -59,6 +62,8 @@ public class VotePageFragment extends Fragment{
 	   Bundle savedInstanceState) {
 	   String name = getArguments().getString(NAME);
 	   String description = getArguments().getString(DESCRIPTION);
+	   pageId = getArguments().getInt(ID);
+	   Log.d("Fragment",pageId+"");
 	   View v = inflater.inflate(R.layout.fragment_vote, container, false);
 	   title = (TextView) v.findViewById(R.id.titleText);
 	   des = (TextView) v.findViewById(R.id.desText);
@@ -82,7 +87,9 @@ public class VotePageFragment extends Fragment{
 		 np.setValue(value);
 		 np.setMaxValue(value+left);
 	 }
-
+	 public int getPageId(){
+		 return pageId;
+	 }
 
 
 	}
