@@ -37,7 +37,7 @@ public class HistoryListAdapter extends ArrayAdapter<VoteHistory> {
         //ImageView imageView = (ImageView) rowView.findViewById(R.id.imageView);
         TextView textView = (TextView) rowView.findViewById(R.id.listTextView);
 
-        String obj = "Vote,"+data.get(position).voteContestantHistory.name+" on "+data.get(position).voteCriterionHistory.name+" for "+data.get(position).voteContestantHistory.score;
+        String obj = data.get(position).voteContestantHistory.name+"->"+data.get(position).voteCriterionHistory.name+" ; "+data.get(position).voteContestantHistory.score;
         //TODO
         //http://158.108.228.54:8080/
         //no img yet
