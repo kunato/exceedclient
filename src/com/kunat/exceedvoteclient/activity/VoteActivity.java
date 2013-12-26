@@ -1,11 +1,6 @@
 package com.kunat.exceedvoteclient.activity;
 
-import java.io.IOException;
-import java.io.OutputStream;
 import java.util.ArrayList;
-
-import org.simpleframework.xml.Serializer;
-import org.simpleframework.xml.core.Persister;
 
 import com.kunat.exceedvoteclient.R;
 import com.kunat.exceedvoteclient.adapter.VotePageAdapter;
@@ -92,37 +87,15 @@ public class VoteActivity extends FragmentActivity implements MyActivity{
 	}
 	public void saveVote(){
 		Log.d("Vote","to "+criteriaId);
-		Serializer serializer = new Persister();
 		Ballot ballot = new Ballot();
 		for(VotePageFragment i : fragments){
 			ScoreCard sc = new ScoreCard(i.getPageId(),i.getValue());
 			ballot.addScoreCard(sc);
 		}
 		Vote vote = new Vote(ballot);
-		String result = "";
-		OutputStream output = new OutputStream()
-	    {
-	        private StringBuilder string = new StringBuilder();
-	        @Override
-	        public void write(int b) throws IOException {
-	            this.string.append((char) b );
-	        }
-
-	        
-	        public String toString(){
-	            return this.string.toString();
-	        }
-	    };
-		try {
-			serializer.write(vote, output);
-			result = output.toString();
-			Log.d("Vote",result);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		
 		ExceedVoteApp app = (ExceedVoteApp) getApplication();
+		String result = app.getStringFromVoteObject(vote);
 		app.vote(criteriaId+"/vote", this, result);
 	}
 	@Override
@@ -148,16 +121,7 @@ public class VoteActivity extends FragmentActivity implements MyActivity{
 	@Override
 	public void onCallBack(String result) {
 		Log.d("TAG", result);
-		Serializer serializer = new Persister();
-        ContestantList c = null;
-		try {
-			c = serializer.read(ContestantList.class, result);
-		
-        
-		} catch (Exception e) {
-			Log.d("ERROR",e.getMessage());
-			e.printStackTrace();
-		}
+		ContestantList c = ((ExceedVoteApp)getApplication()).getContestantListFromString(result);
 		fragments = new ArrayList<VotePageFragment>();
 		data = new ArrayList<Contestant>();
 		for(Contestant i : c.getContestantList()){

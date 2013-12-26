@@ -16,12 +16,9 @@ import com.kunat.exceedvoteclient.adapter.CriteriaListAdapter;
 import com.kunat.exceedvoteclient.application.ExceedVoteApp;
 import com.kunat.exceedvoteclient.model.Criterion;
 import com.kunat.exceedvoteclient.model.CriterionList;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import org.simpleframework.xml.Serializer;
-import org.simpleframework.xml.core.Persister;
 /**
  * MainActivity is a activity that user choose the criteria to vote on.
  * @author Kunat Pipatanakul
@@ -42,16 +39,7 @@ public class MainActivity extends Activity implements MyActivity{
 	@Override
 	public void onCallBack(String result) {
 		Log.d("TAG", result);
-		Serializer serializer = new Persister();
-        CriterionList c = null;
-		try {
-			c = serializer.read(CriterionList.class, result);
-		
-        
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		CriterionList c = ((ExceedVoteApp)getApplication()).getCriterionListFromString(result);
 		listView = (ListView) findViewById(R.id.listView1);
 		//TODO convert result to Criterion
 		data = new ArrayList<Criterion>();

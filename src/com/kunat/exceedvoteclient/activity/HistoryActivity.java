@@ -3,9 +3,6 @@ package com.kunat.exceedvoteclient.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.simpleframework.xml.Serializer;
-import org.simpleframework.xml.core.Persister;
-
 import com.kunat.exceedvoteclient.R;
 import com.kunat.exceedvoteclient.adapter.HistoryListAdapter;
 import com.kunat.exceedvoteclient.application.ExceedVoteApp;
@@ -45,15 +42,9 @@ public class HistoryActivity extends Activity implements MyActivity{
 	public void onCallBack(String result) {
 		listView = (ListView) findViewById(R.id.listView1);
 		data = new ArrayList<VoteHistory>();
-		Serializer serializer = new Persister();
 		Log.d("HIS",result);
-        MyVote c = null;
-		try {
-			c = serializer.read(MyVote.class, result);
-		} catch (Exception e) {
-			Log.d("ERROR",e.getMessage());
-			e.printStackTrace();
-		}
+        MyVote c = ((ExceedVoteApp)getApplication()).getMyVoteFromString(result);
+		
 		for(VoteHistory v : c.ballot.voteHistories()){
 			data.add(v);
 			Log.d("TEST",v.voteCriterionHistory.id+"");
