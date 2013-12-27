@@ -69,12 +69,7 @@ public class LoginActivity extends Activity{
 			Toast.makeText(getApplicationContext(), "Connection Error check your id and your connection", Toast.LENGTH_LONG).show();
 		}
 	}
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		super.onCreateOptionsMenu(menu);
-		getMenuInflater().inflate(R.menu.login, menu);
-		return true;
-	}
+
 
 	
 

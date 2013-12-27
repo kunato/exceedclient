@@ -31,12 +31,6 @@ public class HistoryActivity extends Activity implements MyActivity{
 		app.request("myvote", this);
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
 
 	@Override
 	public void onCallBack(String result) {
@@ -49,7 +43,7 @@ public class HistoryActivity extends Activity implements MyActivity{
 			data.add(v);
 			Log.d("TEST",v.voteCriterionHistory.id+"");
 		}
-		listView.setAdapter(new HistoryListAdapter(getApplicationContext(),R.layout.criteria_list_row, data));
+		listView.setAdapter(new HistoryListAdapter(getApplicationContext(),R.layout.history_list_row, data));
 		/**
 		listView.setOnItemClickListener(new OnItemClickListener() {
 

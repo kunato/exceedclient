@@ -61,7 +61,7 @@ public class VoteActivity extends FragmentActivity implements MyActivity{
 		}
 		
 		Log.d("type",type+"");
-		String header = intent.getStringExtra("key");
+		String header = intent.getStringExtra("name");
 		setTitle(header);
 		ExceedVoteApp app = (ExceedVoteApp) getApplication();
 		app.request("contestant", this);

@@ -35,14 +35,18 @@ public class HistoryListAdapter extends ArrayAdapter<VoteHistory> {
 
         View rowView = inflater.inflate(textViewResourceId, parent, false);
         //ImageView imageView = (ImageView) rowView.findViewById(R.id.imageView);
-        TextView textView = (TextView) rowView.findViewById(R.id.listTextView);
-
-        String obj = data.get(position).voteContestantHistory.name+"->"+data.get(position).voteCriterionHistory.name+" ; "+data.get(position).voteContestantHistory.score;
+        TextView cTextView = (TextView) rowView.findViewById(R.id.criteria);
+        TextView tTextView = (TextView) rowView.findViewById(R.id.team);
+        TextView sTextView = (TextView) rowView.findViewById(R.id.score_his);
+        
+        //String obj = data.get(position).voteContestantHistory.name+"->"+data.get(position).voteCriterionHistory.name+" ; "+data.get(position).voteContestantHistory.score;
         //TODO
         //http://158.108.228.54:8080/
         //no img yet
         //String imageFile = null;
-        textView.setText(obj);
+        cTextView.setText(data.get(position).voteCriterionHistory.name);
+        tTextView.setText(data.get(position).voteContestantHistory.name);
+        sTextView.setText(data.get(position).voteContestantHistory.score+"");
         //no Image yet
         //imageView.setImageDrawable(d);
         return rowView;
