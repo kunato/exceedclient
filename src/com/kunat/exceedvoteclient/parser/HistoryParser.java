@@ -6,7 +6,11 @@ import org.simpleframework.xml.core.Persister;
 import android.util.Log;
 
 import com.kunat.exceedvoteclient.model.MyVote;
-
+/**
+ * HistoryParser used for parseHistory from string
+ * @author Kunat Pipatanakul
+ *
+ */
 public class HistoryParser {
 
 	public static MyVote parseHistory(String result) {

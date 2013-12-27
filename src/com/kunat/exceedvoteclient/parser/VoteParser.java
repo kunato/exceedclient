@@ -9,7 +9,11 @@ import org.simpleframework.xml.core.Persister;
 import android.util.Log;
 
 import com.kunat.exceedvoteclient.model.Vote;
-
+/**
+ * VoteParser used for parseVote from vote object to string.
+ * @author Kunat Pipatanakul
+ *
+ */
 public class VoteParser {
 
 	public static String parseVote(Vote vote) {

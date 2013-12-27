@@ -7,7 +7,11 @@ import org.simpleframework.xml.core.Persister;
 import android.util.Log;
 
 import com.kunat.exceedvoteclient.model.ContestantList;
-
+/**
+ * ContestantParser used for parseContestant from string
+ * @author Kunat Pipatanakul
+ *
+ */
 public class ContestantParser {
 	public static ContestantList parseContestant(String result){
 		Serializer serializer = new Persister();
